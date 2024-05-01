@@ -1,0 +1,79 @@
+
+Q:Hva er hensikten med å bruke en forhåndstrent modell pretrained model i de tidlige stadiene av
+dyplæringsprosjekter?
+- Å redusere mengden treningsdata som behøves
+- Å øke modellens kompleksitet
+- Å validere modellens ytelse på nye, uavhengige datasett
+- Å undervise studenter i grunnleggende programmering
+
+A:
+- Å redusere mengden treningsdata som behøves
+
+
+Q:Hva er viktige egenskaper ved aktiveringsfunksjoner i nevrale nettverk?
+- De tillater nettverket å lære komplekse mønstre i data.
+- De introduserer ikke-linearitet i modellen.
+- De sørger for at nettverket alltid konvergerer raskt under trening.
+A:
+- De tillater nettverket å lære komplekse mønstre i data.
+- De introduserer ikke-linearitet i modellen.
+
+Q: Hvilken rolle spiller "kunstige nevroner" i utviklingen av dyplæringsmodeller?
+A:
+De danner grunnlaget for nevrale nettverk ved å etterligne funksjonaliteten til biologiske nevroner
+
+Q: Hva karakteriserer en dyplæringsmodell sammenlignet med tradisjonelle maskinlæringsmodeller? Velg alternativet
+som er mest presist.
+A: Bruken av kunstige nevrale nettverk med flere lag for å lære mønstre i data
+
+Q:Hvilke to hovedutfordringer kan oppstå ved bruk av dyplæring i produksjon?
+A: 
+Overfitting på treningsdata
+Domene skift, hvor produksjonsdata avviker fra treningsdata
+
+Q:Hva kjennetegner en effektiv implementering av en dyplæringsmodell i en webapplikasjon?
+A:
+Implementering av modeller som er designet for å håndtere inndata med minimalt behov for kompleks
+preprosessering.
+Vektlegging av hurtighet og responsivitet i modellens utførelse for å sikre smidig brukeropplevelse i
+webmiljøet
+
+Q: Hvordan representeres et gråskala bilde på en datamaskin, og hva med et fargebilde?
+A:
+Gråskalabilder representert som en 2D array av piksler; fargebilder representert som en 3D array av
+piksler.
+
+Q: Hva er forskjellen mellom rang "rank" og form "shape" til en tensor, og hvordan bestemmer du rangen ut fra
+formen?
+A:
+Rank er antall dimensjoner i en tensor. Ranken til en vektor (3D-tensor) er 3.
+Shape er antall elementer langs hver dimensjon av en tensor. En matrise (2D-tensor) med 3 rader og 5 kolonner vil ha formen (3, 5).
+
+Q: Hvilken metode tilbyr fastai for å hjelpe deg med å feilsøke en DataBlock?
+A: DataBlock.summary
+
+Q: Hva gjør de to trinnene i fine_tune-metoden i fastai?
+A: Først trener den de siste lagene i modellen, og deretter hele nettverket.
+
+Q:Hva beskriver best konseptet "gradient descent" i kontekts av trening av dyplæringsmodeller?
+A: En optimaliseringsalgoritme som brukes til å minimere en kostnadsfunksjon
+
+Q: Hva er "stride" i sammenheng med et konvolusjonelt nevralt nettverk CNN designet for bilder?
+A: Antall piksler vi flytter filteret for hver gang det brukes
+
+Q: Hva er "tokenization" og hvorfor trenger vi det?
+A: Brytingen av tekst ned i mindre enheter som ord eller subord for videre prosessering
+
+Q: Bruk figuren nedenfor til å forklare de syv stegene en bruker for å trene et kunstig nevralt nettverk.
+
+1. Initiere parametere med tilfeldige vekter og biaser
+2. Test modellen med de tilgeldige parameterne og ta vare på prediksjonene.
+3. Basert på disse prediksjonene og 
+
+
+
+
+
+
+
+

@@ -1,0 +1,168 @@
+Q: Hva er formålet med dyb læring?
+A: Å lære å løse en oppgave ved å konstruere hierarkiske oppgave spesifikke representasjoner av data
+
+Q: Hva er læringsoverføring "transfer learning" i dyplæring?
+A: Å kopiere parametrene fra et nevralt nettverk til et annet
+
+Q: Hvilke av følgende er loss funksjoner som brukes i klassifiseringsoppgaver?
+- MSE
+- Cross Entropy Loss
+- Kryssvalidering
+A: Cross Entropy Loss
+
+Q: Hvilke av følgende er teknikker brukes til å forhindre "overfitting" overtilpasning i dyplærings modeller?
+- L1
+- Dropout
+- Øke antall lag i modellene
+- Weight decay
+A: L1, Dropout og Weight decay
+
+Q: Hva er hovedfunksjonen til et konvolusjons lag i et konvolusjonelt nevralt nettverk CNN ?
+- Å lære romlige egenskaper ved å anvende filtre på inndata til laget
+- Å redusere dimensjonene til inndata til laget
+- Å konvertere inndata til laget til en sannsynlighetsfordeling
+- Å beregne avviket mellom predikerte og faktiske verdier
+
+A: Å lære romlige egenskaper ved å anvende filtre på inndata til laget er hovedfunksjonen i et konvolusjons-lag i et CNN
+
+Q: Hva er formålet med funksjonen `fine_tune()` i fastai biblioteket?
+A: Å tilpasse en forhåndstrent modell til et nytt datasett ved å trene den videre
+
+
+Q: Hva er hovedårsaken til at en anvender data augmentering i dyplæring?
+- For å forbedre kvaliteten på treningsdata
+- For å forhindre overtilpasning "overfitting" ved å øke variasjonen i treningsdata
+- For å redusere størrelsen på treningsdata og slik gjøre treningen raskere
+- For å konvertere data til et format som er kompatibelt med det kunstige nevrale nettverket en bruker
+A: For å forhindre overtilpasning "overfitting" ved å øke variasjonen i treningsdata
+
+Q: Hva er hyperparametre "hyper parameters" i kontekst av dyplæring?
+- Forhåndsbestemte vekter og bias er parametre som er faste gjennom hele treningsprosessen
+- Justerbare parametre som påvirker læringsprosessen og modell arkitekturen
+- Input data som brukes til å trene modellen
+- Prediksjoner fra en modell
+A: Justerbare parametre som påvirker læringsprosessen og modell arkitekturen
+
+Q: Fastai introduserer "learning rate finder" som en teknikk for å velge læringsrate "learning rate" . Forklar hvordan
+teknikken fungerer og hvorfor den kan være nyttig for trening av dyplæringsmodeller
+
+A: 
+Denne teknikker handler om å velge den optimale læringsraten for din dyplæringsmodell. Den starter med en lavlæringsrate
+og øker læringsraten eksponensielt for hver batch av treningsdataen. For hvert trinn i treningen registreres tapet og til slutt
+plottes tapet mot læringsraten i en kontinuerlig graf. 
+Det er typisk slik at læringsraten som gir den raskeste nedgsangen (typisk rett før tapet begynner å stige) som er den ideelle læringsraten.
+
+
+Q: Fastai introduserer "progressive resizing" som en data augmenteringsteknikk. Forklar hvordan denne teknikken
+fungerer og hvorfor dette kan være en god idé for trening av dyplæringsmodeller.
+
+A: En teknikk som gir dyplæringsmodellen dårligere kvalitet på bildene den trenes på for så å gradvis øke kvaliteten.
+Kvaliteten justeres ved å endre størrelsen på bildet (resizing). F.eks.i bildegjenkjenning der målet er å klassifisere katter
+vil modellen først lære seg hovedtrekkene til bildet for så og etterhvert lære mer komplekse features om katten etterhvert som kvaliten øker.
+
+Q: Hva er en metrikk? Hvordan er dette forskjellig fra en loss funksjon?
+A:
+En loss funksjon er forholdet mellom de predikerte verdiene og de faktiske verdiene. Det er denne verdien du ønsker å minimere under treningen.
+Metrikker brukes til å bedømme ytelsen til en modell og brukes for å vurdere og sammenligne modeller.
+
+Q: Forklar kort de syv stegene en bruker for å trene et nevralt nettverk:
+
+A: 
+1. Initiere parametere med tilfeldige vekter og bias
+2. Ta en batch av treningsdataen og test modellen med de initierte parameterne. Her får du de første prediksjonene.
+3. Basert på disse prediksjonene, kalkulere modellen sit tap.
+4. Med backpropogation kan vi nå justere nettverkes parametere for å minimere tapet. Hvordan parameterne skal justeres
+kalkuleres med derivasjon. 
+5. Med gradientene beregnet, oppdateres alle parameterne med gradient descent.
+6. Gå tilbake til steg 2 og gjenta prosessen.
+7. Stop når et kriterie er møtt.
+
+Q: Hva er hensikten med aktiveringsfunksjoner "activation functions" i et nevralt nettverk?
+- Å redusere treningshastigheten
+- Å forbedre ytelsen til optimaliserings algoritmer
+- Å legge til ikke linearitet i modellen
+- Å redusere nettverkets kompleksitet
+A: Å legge til ikke linearitet i modellen
+
+Q: Forklar konseptet "embeddings" i kontekst av naturlig språkprosessering NLP
+A: En teknikk som gjør det mulig å representere tekst som vektorer. Disse vektorene er i et høydimensjonalt, kalt embeddings, fanger opp semantisk egenskaper i språk
+og gjr det mulig for datamaskiner å behandle tekst på en sammenhengene måte. 
+
+Q: Fastai biblioteket bruker "item transforms" og "batch transforms" for data augmentering. Forklar forskjellen mellom
+disse to typene transformasjoner og gi et eksempel knyttet til hver av dem.
+A: 
+Dette er fastai sine to hovedtyper av data agumentering. "Items transforms" anvendes på individuelle dataelementer,
+mens "batch transforms" anvendes på flere dataelementer på en gang.
+
+Q: Forklar kort hvordan bilde baserte modeller kan være relevante også for andre typer data enn bilder. Gi et eksempel.
+A: Eksempler på dette er tidsserier og lydanalyse. Bilde baserte modeller har lært å gjennkjenne mønstre og denne egenskapen kan overføres til
+datatyper som i utgangspunktet ikke var bilder. Et eksempel på en tidsserie er aksjeanalyse. Her kan en bidemodell fange opp trender i dataen.
+
+Q: Når vi skal lage valideringsdata er det alltid en god idé å bruke tilfeldig uttrekk av data `RandomSplitter`
+A: 
+Usant. Gjelder ikke for tidsserier eller gruppert data
+
+Q: Hva brukes `y_range` til i fastai biblioteket?
+A: Brukes til å sikre at modellen sine predisjonener er innenfor det angitte området. ofte har man målvariabler 
+med besteme grenseverdier. f.eks. alder, rating
+
+Q: Hva er "feedback loops" og på hvilken måte kan disse skape problemer for maskinlærings baserte system?
+A: 
+Dette oppstår når outputen fra en modell systematisk påvirker innputen den mottar i fremtiden, og dermed igjen påvirker fremtidige prediksjoner.
+Slike selvforsterkende effekter kan føre til at modellen blir mindre presis og generaliserbar.
+Eks. prediksjoner om at et området har høy grad av kriminalitet gjør at politiet øker patruljefrekvensen i området og dermed
+generer ny data, uavhengig av om kriminalitetsraten faktisk har økt.
+
+Q: Hva er bilde segmentering "image segmentation" ? Mer enn ett alternativ kan være korrekt.
+- Metode for å dele inn bildet i betydningsfulle regioner basert på likhet
+- Metode for å forbedre bilde kontrast
+- Metode for å redusere bilde støy
+A:
+- Metode for å dele inn bildet i betydningsfulle regioner basert på likhet.
+Brukes f.eks. i medisinske bildebehandling for å se på et spesifikt organg.
+
+
+Q: Hva er en språkmodell language model i kontekst av dyplæring?
+- En modell som tilordner en vektor av tall til hvert ord i en setning
+- En modell som predikerer ord tatt ut av setninger eksempel: neste ord fra en passasje tekst
+- Modeller som brukes til å sammenligne ulike språks grammatiske struktur
+
+A:
+- En modell som predikerer ord tatt ut av setninger eksempel: neste ord fra en passasje tekst
+
+
+Q: Hva er bootstrapping problemet i "collaborative filtering"?
+A:
+- Bootstapping problemet er utfordringen med å gi gode anbefalinger når det ikke er tilstrekkelig data tilgjengelig.
+Problemet oppstår for nye brukere og for nye elementer. Eks. ny bruker eller en ny film på netflix. 
+
+
+Q: Hvorfor er det utfordrende å forstå og tolke hvordan en dyplæringsmodell kommer frem til en gitt prediksjon?
+A:
+- Høy kompleksitet og abstraksjon --> Mange lag med ikke-linære operasjoner gjør at prediksjoner 
+    er et resultat av en serie komplekse og lite intuitive operasjoner
+- Lite transparant --> I motsetning til linære regresjonsmodeller og beslutningstre lærer dyplæringsmodeller
+    selv hvorda de skal minimere tapet og disse lærte egenskapene er ikke like forståelige eller identifiserbare.
+- Overflødighet --> Det er vanlig at flere noder og lag utfører lignende eller overlappende beregninger. 
+    Dette skaper redundans og gjør det vanskeligere å isolere effekten av enkeltkomponenter i modellen.
+- Store mengder data --> Kan være vanskelig for mennesker å se mønsteret som er funnet i store mengder data
+    hos en dyplæringsmodell
+- Små endringer i input kan føre til uventede endringer i output. Dette gjør det utfordrende å tolke hvorfor
+    modellen regarer som den gjør.
+
+Q:Forklar rollen til klassen `DataLoaders` NB: med en "s" til slutt i fastai.
+A:
+- Dataloader klassen til fastai spiller en sentral rolle i håndteringen og forberedelsen av data.
+- Hovedfunkjsonene er:
+    1. Organisering av datasett
+    2. Batching
+    3. Dataprosessering og data augmentering
+
+Q: Hva er `RandomResizedCrop` i fastai?
+A:
+- En dataaugmenteringsteknikk for bildedata. Teknikken ufører tilfeldig beskjæring av bildet, etterfulgt av en forhåndsdefinert resizing.
+- Dette forbedrer modellens generalisering
+- Forebygger overfitting
+
+
+
